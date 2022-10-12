@@ -1,0 +1,79 @@
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/Circle-icons-weather.png" type="image/x-icon" />
+
+    <title>Weather</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="./assets/js/script.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/0e452b6c8c.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+</head>
+<body class="min-vh-100">
+    <!--Nav Bar -->
+    <nav class=" container  min-vw-100   " id="nav-container">
+        <div id="navbar" class="row">
+            <h1 class="col text-3xl font-bold underline" id="title">Weather </h1>
+                <form class="col " role="search" id="search-bar-container">
+                    <input class=" me-2" autoComplete="home city" id="searchvalue"  type="search" placeholder="Search City" aria-label="Search">
+                    <button class="btn btn-outline-success" id="searchbtn"type="button">Search</button>
+                </form>
+        </div>
+    </nav>
+   
+    <main id="mainContainer" class="">
+       
+            <div class="row" id="current-weather-container">
+                <!--Current City Forecast -->
+                <div  id="ChosenCity" class="col-lg-4 col-md-6 col-sm-10 col-xs-12  card">
+                </div>
+                <!-- Searched City Forecast -->
+                <div  class="col-lg-8 col-md-6 col-sm-10 col-xs-12" id="Week">
+                    <div id="current-temp" class="weekday"></div>
+                </div>
+            </div>
+        
+        <!-- 7 day Forecast  -->
+        <section class="container" id="map-forecast-container"  >
+        
+           
+            <div class="  weather-forecast" id="weather-forecast">
+
+            
+            
+        </section>
+        <!-- Map  -->
+        <div class="container" id="map-container">
+        <div id="map" class="col-12"></div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+       
+    </main>
+ 
+    
+
+</body>
+</html>
+
+

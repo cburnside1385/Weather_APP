@@ -1,0 +1,233 @@
+/*Elements*/ 
+html,body {
+    background-image: linear-gradient(#0a3562, white);
+     
+}
+
+/*ids*/ 
+#search-bar-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+
+#title {
+    display: flex;
+    justify-content: start;
+    color: #ffffff;
+    padding-left: 30px;
+}
+
+#iconimage{
+
+    height:200px;
+}
+
+#current-weather-container {
+    padding: 40px 105px;
+    
+    
+}
+
+#ChosenCity {
+    display: flex;
+    background-image: linear-gradient(#ffffff,#577397);
+    color: #0a3562;
+    border: 5px solid lightgray;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#current-temp{
+    height: fit-content;
+}
+
+
+
+#CurrentLocation {
+    font-weight: bolder;
+}
+ #CityName {
+    font-weight: bolder;
+    font-size:25px;
+    color:white
+}
+#map {
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  height: 360px;
+  width: 90%;
+}
+#weather-forecast {
+       display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+        align-items: none;
+        overflow-x: auto;  
+}
+#map-forecast-container{
+    display: flex;
+
+}
+#map-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/*class*/ 
+.weather-forecast-item.weekday {
+    height: 375px;
+}
+
+.day, .temp, #CurrentTime, #current-icon {
+    text-align: center;
+}
+
+
+.weekdayTitle {
+    background-color: #f1ae1a;
+    color: #0a3562;
+    font-weight: bolder;
+    text-align: center;
+    width: 100%;
+    border-bottom: 5px solid lightgray;
+}
+
+.weekday {
+    background-color: #577397;
+    border:  5px solid lightgray;
+
+    text-align: center;
+    height: fit-content;
+}
+
+
+.highTemp {
+    color: #0a3562;
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+}
+.lowTemp {
+    color: #577397;
+    font-size: 12px;
+    font-weight: bolder;
+    text-align: center;
+}
+.temps{
+
+    background-color:white;
+       height: 60px;
+      
+
+}
+.temps2 {
+    background-color: white;
+    height: 60px;
+    margin:0px 0px 0px 0px;
+}
+
+.rainChance {
+    height: auto;
+    background-color: #0a3562;
+    color: white;
+    font-weight: bolder;
+}
+.white {
+    color: white;
+}
+
+
+
+
+
+
+
+/* Media Queries  */
+
+
+@media screen and (max-width: 840px){
+    
+    #weather-forcast{
+        display: flex;
+        justify-content: center;
+       padding: 20px 0;
+       width: 90%;
+        }
+
+    #current-weather-container{
+        display: flex;
+     justify-content: center;
+        align-items: center;
+        width: vw100;   
+        padding: 20px 0;
+    }
+  
+
+    #ChosenCity{
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        width: 90%;
+        
+      }
+
+    #Week{
+        
+        padding: 20px 0;
+        width: 90%;
+    }
+
+    #map-forcast-container{
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        width: vw100;
+    }
+    
+    #nav-container {
+        float: none !important;
+       
+    }
+   
+
+  
+}
+
+@media screen and (max-width: 441px){
+
+#title{
+    justify-content: center;
+   padding-top: 10px;
+}
+
+#search-bar-container{
+    justify-content: center;
+    padding: 5px 0;
+}
+#current-weather-container{
+    padding: 40px 25px 10px 25px;
+}
+#ChosenCity{
+    padding: 10px 0;
+    width: 100%;
+    }
+
+#Week{
+    width: 100%;
+    padding: 10px 0;
+
+}
+
+#map{
+    width: 90%;
+    margin-bottom: 10px;
+}
+#map-forecast-container{
+    width: 100%;
+}
+}
