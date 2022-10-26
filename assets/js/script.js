@@ -2,22 +2,11 @@
 
 
 
-window.onload = () => {
 
-    //
-    /*icon();*/
-};
-
-
-
-
-//This will return the users current Location including city state and zip
 function GetCurrentLocation() {
-    const Curlocation = document.getElementById('CurrentLocation');
-    const CurTime = document.getElementById('CurrentTime');
-    const Curday = document.getElementById('current-date');
+    const locationNow = document.getElementById('CurrentLocation');
     
-    let CityName = document.getElementById("CityName");
+    let citName = document.getElementById("CityName");
     location.city
     $.ajax({
         url: "https://geolocation-db.com/json/d802faa0-10bd-11ec-b2fe-47a0872c6708",
@@ -25,9 +14,9 @@ function GetCurrentLocation() {
         dataType: "json",
         success: function (location) {
            
-            Curlocation.innerHTML = location.city + ", " + location.state + " " + location.postal 
+            locationNow.innerHTML = location.city + ", " + location.state + " " + location.postal 
           
-            CityName.innerHTML = location.city
+            citName.innerHTML = location.city
         }
     });
 
@@ -37,23 +26,14 @@ function GetCurrentLocation() {
 
 
 
-const d = new Date();
 
-const dateEl = document.getElementById('current-date');
-const currentWeatherItemsEl = document.getElementById('current-weather-items');
-const timezone = document.getElementById('time-zone');
-const countryEl = document.getElementById('country');
-const weatherForecastEl = document.getElementById('weather-forecast');
-const currentTempEl = document.getElementById('current-temp');
+const forecast = document.getElementById('weather-forecast');
+const currentTem = document.getElementById('current-temp');
 const chosenCity = document.getElementById('ChosenCity'); 
-const year = d.getFullYear();
-const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const monthname = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 
 
-
-const API_KEY ='6603b91c2e08bedf34942d6e0b95b6a1';
+const API_KEY = '13b7a1f258aadd36b25dfe337bd1986d';
 function time() {setInterval(() => {
     const time = new Date();
  
@@ -63,13 +43,10 @@ function time() {setInterval(() => {
     const hoursIn12HrFormat = hour >= 13 ? hour %12: hour
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
-    const day = weekday[d.getDay()];
-    const month = monthname[d.getMonth()];
-    const date = d.getDate();
     const ampm = hour >=12 ? 'PM' : 'AM'
 
-    timeEl.innerHTML = (hoursIn12HrFormat < 10 ? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10 ? '0' + minutes : minutes)+":" + seconds +  ' ' +`<span id="am-pm">${ampm}</span>`
-   /* dateEl.innerHTML = day + " " + month + " " + date + ", " + year;*/
+    timeEl.innerHTML = (hoursIn12HrFormat < 10 ? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ":" + (seconds < 10 ? '0' + seconds : seconds) +  ' ' +`<span id="am-pm">${ampm}</span>`
+
     
 
 }, 1000);
@@ -104,8 +81,8 @@ function showWeatherData (data){
     data.daily.forEach((day, idx) => {
         if (idx == 0) {
             
-            currentTempEl.innerHTML = `
-                <div id="CityName" class="col CityName">
+            currentTem.innerHTML = `
+                <div id="citName" class="col citName">
   
                     </div>
             <center>
@@ -144,13 +121,13 @@ function showWeatherData (data){
             
             `
             let input = document.getElementById("searchvalue");
-            let CityName = document.getElementById("CityName");
-            CityName.innerHTML = input.value
+            let citName = document.getElementById("citName");
+            citName.innerHTML = input.value
         }
     })
 
 
-    weatherForecastEl.innerHTML = otherDayForcast;
+    forecast.innerHTML = otherDayForcast;
     let loc = {
         lat: data.lat,
         long: data.lon
@@ -158,12 +135,11 @@ function showWeatherData (data){
     displayMap(loc);
 }
 function showWeatherDataCurrentLoc(data) {
-    let { humidity, pressure, sunrise, sunset, wind_speed } = data.current;
     
 
 
 
-    let otherDayForcast = ''
+
     data.daily.forEach((day, idx) => {
         if (idx == 0) {
            
@@ -194,35 +170,34 @@ function showWeatherDataCurrentLoc(data) {
 
    
 }
-// Imports list of world city coordinates. 
 import cityData from "../../data/worldcities.js";
 
 document.getElementById("searchbtn").addEventListener("click", search);
 
 function search() {
-  // grab city from user
+
     const input = document.getElementById("searchvalue");
     
   
 
-  // get coords
+
     function capitalizeFirstLetter(str) {
 
-        // converting first letter to uppercase
+       
         const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
 
         return capitalized;
     }
 
   let loc = getCoordinatesOfCity(capitalizeFirstLetter(input.value));
-  // show the map of entered city
+ 
     
     displayMap(loc);
     getWeatherDataSearch(loc)
 }
 
 function getCoordinatesOfCity(city) {
-  //grab the coordinates of city from the city list object
+  
   let loc = {
     lat: parseFloat(cityData[`${city}`][0].lat),
     long: parseFloat(cityData[`${city}`][0].lng),
@@ -246,7 +221,6 @@ function displayMap(loc) {
   ).addTo(map);
 }
 
-//Sets geo cord pulled in from openweather 
 function getWeatherDataSearch(loc) {
 
 

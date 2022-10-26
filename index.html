@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/imgs/Circle-icons-weather.png" type="image/x-icon" />
 
-    <title>Weather</title>
+    <title>Weather 5 Day forecast</title>
     <link href="dist/output.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.bundle.min.js"></script>
 
@@ -24,7 +24,6 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 </head>
 <body class="min-vh-100">
-    <!--Nav Bar -->
     <nav class=" container  min-vw-100   " id="nav-container">
         <div id="navbar" class="row">
             <h1 class="col text-3xl font-bold underline" id="title">Weather </h1>
@@ -38,16 +37,16 @@
     <main id="mainContainer" class="">
        
             <div class="row" id="current-weather-container">
-                <!--Current City Forecast -->
+            
                 <div  id="ChosenCity" class="col-lg-4 col-md-6 col-sm-10 col-xs-12  card">
                 </div>
-                <!-- Searched City Forecast -->
+              
                 <div  class="col-lg-8 col-md-6 col-sm-10 col-xs-12" id="Week">
                     <div id="current-temp" class="weekday"></div>
                 </div>
             </div>
         
-        <!-- 7 day Forecast  -->
+        
         <section class="container" id="map-forecast-container"  >
         
            
@@ -56,7 +55,7 @@
             
             
         </section>
-        <!-- Map  -->
+      
         <div class="container" id="map-container">
         <div id="map" class="col-12"></div>
         </div>
