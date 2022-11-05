@@ -2,7 +2,7 @@
 
 
 
-
+//my api//
 function GetCurrentLocation() {
     const locationNow = document.getElementById('CurrentLocation');
     
@@ -29,11 +29,11 @@ function GetCurrentLocation() {
 
 const forecast = document.getElementById('weather-forecast');
 const currentTem = document.getElementById('current-temp');
-const chosenCity = document.getElementById('ChosenCity'); 
+const searched = document.getElementById('Searched'); 
 
 
-
-const API_KEY = '13b7a1f258aadd36b25dfe337bd1986d';
+//new api not workin//
+const API_KEY = 'd2b6ee87e54c05fd0975ee59cf826c34';
 function time() {setInterval(() => {
     const time = new Date();
  
@@ -58,7 +58,7 @@ function getWeatherData () {
         
         let {latitude, longitude } = success.coords;
 
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=imperial&appid=${API_KEY}`).then(res => res.json()).then(data => {
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=imperial&appid=$d2b6ee87e54c05fd0975ee59cf826c34`).then(res => res.json()).then(data => {
 
         
             showWeatherData(data);
@@ -146,7 +146,7 @@ function showWeatherDataCurrentLoc(data) {
             
             
             
-            chosenCity.innerHTML = `
+            searched.innerHTML = `
    
             
             <div style="height:auto">

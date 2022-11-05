@@ -5,14 +5,14 @@ html,body {
 }
 
 /*ids*/ 
-#search-bar-container {
+#sbcont {
     display: flex;
     justify-content: end;
     align-items: center;
 }
 
 
-#title {
+#Headline {
     display: flex;
     justify-content: start;
     color: #ffffff;
@@ -24,7 +24,7 @@ html,body {
     height:200px;
 }
 
-#current-weather-container {
+#cwcont {
     padding: 40px 105px;
     
     

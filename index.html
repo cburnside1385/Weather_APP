@@ -17,17 +17,18 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="./assets/js/script.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link href="assets/css/style.css" rel="stylesheet" />
+
     <script src="https://kit.fontawesome.com/0e452b6c8c.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <link href="assets/css/stylesheet.css" rel="stylesheet" />
 </head>
 <body class="min-vh-100">
     <nav class=" container  min-vw-100   " id="nav-container">
         <div id="navbar" class="row">
-            <h1 class="col text-3xl font-bold underline" id="title">Weather </h1>
-                <form class="col " role="search" id="search-bar-container">
+            <h1 class="col text-3xl font-bold underline" id="Headline">Weather </h1>
+                <form class="col " role="search" id="sbcont">
                     <input class=" me-2" autoComplete="home city" id="searchvalue"  type="search" placeholder="Search City" aria-label="Search">
                     <button class="btn btn-outline-success" id="searchbtn"type="button">Search</button>
                 </form>
@@ -36,9 +37,9 @@
    
     <main id="mainContainer" class="">
        
-            <div class="row" id="current-weather-container">
+            <div class="row" id="cwcont">
             
-                <div  id="ChosenCity" class="col-lg-4 col-md-6 col-sm-10 col-xs-12  card">
+                <div  id="Searched" class="col-lg-4 col-md-6 col-sm-10 col-xs-12  card">
                 </div>
               
                 <div  class="col-lg-8 col-md-6 col-sm-10 col-xs-12" id="Week">
